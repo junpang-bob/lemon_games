@@ -1,6 +1,6 @@
 .gameList{
   padding: 10px 20px;
-  width: 50px;
+  width: 200px;
   height: calc(100vh - 60px);
   background: #dddd;
 }
@@ -8,8 +8,8 @@
   display: flex;
 }
 .gameContainer{
-  width: calc(100vw - 100px);
-  height: 800px;
+  width: calc(100vw - 200px);
+  height: 100vh;
   min-width: 800px;
 }
 
