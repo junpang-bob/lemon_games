@@ -7,14 +7,15 @@ import {
 import Game from './pages/game/Game';
 import XOGame from './pages/game/XOGame/XOGame';
 import './assets/css/base.css'
+import './assets/css/layout.css'
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Game/>,
-    children:[
+    element: <Game />,
+    children: [
       {
-        path:'/xogame',
-        element:<XOGame/>
+        path: '/xogame',
+        element: <XOGame />
       }
     ]
   },
@@ -22,6 +23,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

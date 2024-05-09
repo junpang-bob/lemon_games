@@ -1,0 +1,13 @@
+.lemon_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lemon_vertical_center{
+  display: flex;
+  align-items: center;
+}
+.lemon_justify_center{
+  display: flex;
+  justify-content: center;
+}
