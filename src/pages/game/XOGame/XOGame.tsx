@@ -100,7 +100,7 @@ export default function XOGame() {
     );
   });
   return (
-    <div>
+    <div className='lemon_vertical_center'>
       <div><Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} /></div>
       <div className='list'>
         <ol>
