@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Game from './pages/game/Game';
 import XOGame from './pages/game/XOGame/XOGame';
+import MpGame from './pages/game/MpGame/MpGame';
 import './assets/css/base.css'
 import './assets/css/layout.css'
 const router = createBrowserRouter([
@@ -16,6 +17,9 @@ const router = createBrowserRouter([
       {
         path: '/xogame',
         element: <XOGame />
+      }, {
+        path: '/mpgame',
+        element: <MpGame />
       }
     ]
   },
