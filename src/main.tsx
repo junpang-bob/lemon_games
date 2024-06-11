@@ -9,6 +9,7 @@ import XOGame from './pages/game/XOGame/XOGame';
 import MpGame from './pages/game/MpGame/MpGame';
 import './assets/css/base.css'
 import './assets/css/layout.css'
+import AddGame from './pages/game/AddGame/AddGame';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,9 @@ const router = createBrowserRouter([
       }, {
         path: '/mpgame',
         element: <MpGame />
+      }, {
+        path: '/addGame',
+        element: <AddGame />
       }
     ]
   },
