@@ -10,12 +10,12 @@ type Action = { type: 'added', id: number, taskName: string } | { type: 'changed
 const initTaskList = [
   {
     taskName: 'task1',
-    done: true,
+    done: false,
     id: 0,
   },
   {
     taskName: 'task1',
-    done: true,
+    done: false,
     id: 1,
   },
   {
