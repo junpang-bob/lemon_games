@@ -1,11 +1,6 @@
 import { useReducer } from "react"
 import AddTask from "./components/AddTask"
 import TaskList from "./components/TaskList";
-type Task = {
-  id: number;
-  taskName: string;
-  done: boolean;
-}
 type Action = { type: 'added', id: number, taskName: string } | { type: 'changed', task: Task } | { type: 'delete', id: number }
 const initTaskList = [
   {

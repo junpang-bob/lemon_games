@@ -1,11 +1,4 @@
 import { useState } from "react";
-
-type Task = {
-  id: number;
-  taskName: string;
-  done: boolean;
-}
-
 function Task({ task, onChangeTask, onDeleteTask }:
   { task: Task, onChangeTask: (task: Task) => void, onDeleteTask: (id: number) => void }) {
   const [isEdit, setIsEdit] = useState(false);
@@ -43,9 +36,7 @@ function TaskList({ taskList, onChangeTask, onDeleteTask }:
   { taskList: Task[], onChangeTask: (task: Task) => void, onDeleteTask: (id: number) => void }) {
   const tasks = taskList.map(item => {
     return <li key={item.id}>
-      {/* <input type="checkbox" name="" id="" /> */}
       <Task task={item} onChangeTask={onChangeTask} onDeleteTask={onDeleteTask} />
-      {/* <button onClick={() => onDeleteTask(item.id)}>delete</button> */}
     </li>
   })
   return <>
