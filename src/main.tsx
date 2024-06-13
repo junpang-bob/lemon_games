@@ -10,6 +10,9 @@ import MpGame from './pages/game/MpGame/MpGame';
 import './assets/css/base.css'
 import './assets/css/layout.css'
 import AddGame from './pages/game/AddGame/AddGame';
+import BubblesGame from './pages/game/BubblesGame/BubblesGame';
+import TDGame from './pages/game/TDGame/TDGame';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +27,14 @@ const router = createBrowserRouter([
       }, {
         path: '/addGame',
         element: <AddGame />
+      },
+      {
+        path: '/bubblesGame',
+        element: <BubblesGame />
+      },
+      {
+        path: '/tdGame',
+        element: <TDGame />
       }
     ]
   },
