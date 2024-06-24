@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import './main.css'
 import Game from './pages/game/Game';
 import XOGame from './pages/game/XOGame/XOGame';
 import MpGame from './pages/game/MpGame/MpGame';
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className=' bg-black  text-white'>
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>,
 )

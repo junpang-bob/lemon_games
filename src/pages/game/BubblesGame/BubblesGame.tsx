@@ -9,7 +9,7 @@ function BubblesGame() {
   const pos4 = useDelayedValue(pos3, 100);
   const pos5 = useDelayedValue(pos4, 50);
   return <>
-    <div>
+    <div className="bg-black w-[400px] h-[500px]">
       <Dot position={pos1} opacity={1} />
       <Dot position={pos2} opacity={0.8} />
       <Dot position={pos3} opacity={0.6} />

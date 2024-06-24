@@ -31,6 +31,9 @@ function TDGame() {
   useEffect(() => {
     // setCount(count + 1)
     console.log('开始链接了');
+
+    console.log('我太困了');
+
     return () => console.log('要裂开了');
 
 
