@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
-  createBrowserRouter,
   RouterProvider,
+  createHashRouter
 } from "react-router-dom";
 import './main.css'
 import Game from './pages/game/Game';
@@ -13,28 +13,34 @@ import './assets/css/layout.css'
 import AddGame from './pages/game/AddGame/AddGame';
 import BubblesGame from './pages/game/BubblesGame/BubblesGame';
 import TDGame from './pages/game/TDGame/TDGame';
+import Home from './pages/home/Home';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/",
+    path: '/',
+    element: <Home />
+
+  },
+  {
+    path: "/game",
     element: <Game />,
     children: [
       {
-        path: '/xogame',
+        path: 'xogame',
         element: <XOGame />
       }, {
-        path: '/mpgame',
+        path: 'mpgame',
         element: <MpGame />
       }, {
-        path: '/addGame',
+        path: 'addGame',
         element: <AddGame />
       },
       {
-        path: '/bubblesGame',
+        path: 'bubblesGame',
         element: <BubblesGame />
       },
       {
-        path: '/tdGame',
+        path: 'tdGame',
         element: <TDGame />
       }
     ]
@@ -43,7 +49,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className=' bg-black  text-white'>
+    <div className=' bg-black  text-white w-[100vw] h-[100vh] overflow-scroll'>
       <RouterProvider router={router} />
     </div>
   </React.StrictMode>,

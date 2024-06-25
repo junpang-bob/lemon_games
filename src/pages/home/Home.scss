@@ -1,0 +1,9 @@
+#home{
+  .home-nav{
+    display: grid;
+    grid-template-columns: 70px 70px 70px;
+    justify-content: end;
+    padding: 20px;
+    width: 100%;
+  }
+}

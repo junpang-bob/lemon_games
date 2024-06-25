@@ -88,6 +88,8 @@ export default function XOGame() {
   }
   const moves = history.map((squares, move) => {
     let description;
+    console.log(squares);
+
     if (move > 0) {
       description = 'Go to move #' + move;
     } else {

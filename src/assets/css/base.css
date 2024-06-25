@@ -162,6 +162,9 @@ a {
   background-color: rgba(125, 125, 125, 0.7);
   -webkit-border-radius: 6px;
 }
+::-webkit-scrollbar-corner{
+  background-color: transparent;
+}
 
 html,
 body {
