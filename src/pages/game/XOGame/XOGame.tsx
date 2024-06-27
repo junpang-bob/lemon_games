@@ -28,8 +28,6 @@ function calculateWinner(squares: string[]) {
 }
 
 function Board({ xIsNext, squares, onPlay }: { xIsNext: boolean | null, squares: string[], onPlay: (squares: string[]) => void }) {
-  // const [squares, setSquares] = useState(Array(9).fill(null));
-  // const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
