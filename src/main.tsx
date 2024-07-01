@@ -14,6 +14,8 @@ import AddGame from './pages/game/AddGame/AddGame';
 import BubblesGame from './pages/game/BubblesGame/BubblesGame';
 import TDGame from './pages/game/TDGame/TDGame';
 import Home from './pages/home/Home';
+import GreedySnake from './pages/game/GreedySnake/GreedySnake';
+
 
 const router = createHashRouter([
   {
@@ -42,7 +44,12 @@ const router = createHashRouter([
       {
         path: 'tdGame',
         element: <TDGame />
-      }
+      },
+      {
+        path: 'greedySnake',
+        element: <GreedySnake />
+      },
+
     ]
   },
 ])
