@@ -1,13 +1,40 @@
 
 import { MutableRefObject, useRef, useEffect, useState } from 'react';
 import './GreedySnake.scss'
-type Direction = 'ArrowLeft' | 'ArrowRight' | 'ArrowDown' | 'ArrowUp';
+// type Direction = 'ArrowLeft' | 'ArrowRight' | 'ArrowDown' | 'ArrowUp';
+
+function SnakeBody({ positionTop, positionLeft }:
+  { positionTop: string, positionLeft: string }) {
+  return <div className='snake-body' style={{
+    top: positionTop, left: positionLeft
+  }}></div >
+}
+
 export default function GreedySnake() {
   const [direction, setDirection] = useState('ArrowRight');
   const snakeRef: MutableRefObject<null | HTMLDivElement> = useRef(null)
   useEffect(() => {
+    const ctrlList = ['ArrowLeft', 'ArrowRight', 'ArrowDown', 'ArrowUp'];
     window.addEventListener('keydown', (e) => {
-      setDirection(e.key);
+      setDirection(direction => {
+        /**
+         * todo
+         * 代码待优化
+         */
+        if (ctrlList.some(item => item === e.key)) {
+          if (
+            ((direction === 'ArrowLeft' || direction === 'ArrowRight')
+              && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) ||
+            ((direction === 'ArrowDown' || direction === 'ArrowUp') &&
+              (e.key === 'ArrowDown' || e.key === 'ArrowUp'))
+          ) {
+            return direction
+          }
+          return e.key
+        } else {
+          return direction
+        }
+      });
     })
   }, [])
   useEffect(() => {
@@ -43,6 +70,8 @@ export default function GreedySnake() {
   }, [direction])
 
   return <div className="relative w-[400px] h-[400px] bg-slate-500">
-    <div ref={snakeRef} className='snake-header'>贪</div>
+    <SnakeBody positionLeft='0px' positionTop='0px' />
+    <SnakeBody positionLeft='20px' positionTop='0px' />
+    <div ref={snakeRef} className='snake-header'>猴</div>
   </div>
 }

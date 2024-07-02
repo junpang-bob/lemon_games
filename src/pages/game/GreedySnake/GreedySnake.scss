@@ -1,10 +1,18 @@
 .snake-header{
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 40px;
   width: 20px;
   height: 20px;
   line-height: 20px;
   text-align: center;
   transform: rotate(90deg);
+}
+.snake-body{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  background:#fff;
 }
