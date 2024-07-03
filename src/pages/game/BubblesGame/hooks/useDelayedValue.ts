@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useDelayedValue(value: { x: number, y: number }, delay: number) {
+function useDelayedValue<T>(value: T, delay: number) {
   const [delayedValue, setDelayedValue] = useState(value);
 
   useEffect(() => {
