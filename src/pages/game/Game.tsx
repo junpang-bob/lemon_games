@@ -14,7 +14,7 @@ export default function Game() {
           {/* <div style={{ marginBottom: '10px' }}> <Link to="/game/addGame">addCase</Link></div> */}
           <div style={{ marginBottom: '10px' }}> <Link to="/game/bubblesGame">bubblesGame</Link></div>
           {/* <div style={{ marginBottom: '10px' }}> <Link to="/game/tdGame">tdGame</Link></div> */}
-          <div style={{ marginBottom: '10px' }}> <Link to="/game/greedySnake">吃成猪猪</Link></div>
+          {/* <div style={{ marginBottom: '10px' }}> <Link to="/game/greedySnake">吃成猪猪</Link></div> */}
         </div>
         <div className={`${styles.gameContainer} lemon_center`}>
           <LevelContext.Provider value={level + 3}>
