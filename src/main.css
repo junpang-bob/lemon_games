@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+	.blog-p {
+	  margin-bottom: 15px;
+	  width: 100%;
+	  font-size: 14px;
+	  color: gray;
+	  text-indent: 2em;
+	  line-height: 1.2em;
+	}
+	/* ... */
+  }
