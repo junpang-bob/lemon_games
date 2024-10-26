@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { ThemeContext, SetThemeContext } from '../../context/themeContext'
 
@@ -8,6 +8,8 @@ function HomeNav() {
 	let setTheme: Dispatch<SetStateAction<string>> = useContext(SetThemeContext)
 	const handleChangeTheme = () => {
 		console.log(theme);
+		console.log(setTheme);
+
 	}
 	return <header className='flex flex-row justify-end text-[20px] p-6'>
 		<Link className='ml-5' to="/">home</Link>
