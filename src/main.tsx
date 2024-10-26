@@ -6,7 +6,6 @@ import {
 	Navigate
 } from "react-router-dom";
 import './main.css'
-import './assets/css/iconfont.css'
 import Game from './pages/game/Game';
 import XOGame from './pages/game/XOGame/XOGame';
 import './assets/css/base.css'
@@ -15,7 +14,7 @@ import BubblesGame from './pages/game/BubblesGame/BubblesGame';
 import Home from './pages/home/Home';
 import Demos from './pages/demos/Demos';
 import Markets from './pages/demos/markets/Markets';
-
+import CodeTest from './pages/reactLearn/CodeTest';
 
 const router = createHashRouter([
 	{
@@ -53,6 +52,10 @@ const router = createHashRouter([
 						element: <Markets />,
 					}
 				]
+			},
+			{
+				path: "/codeTest",
+				element: <CodeTest />
 			}
 		]
 
@@ -61,8 +64,6 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<div className=' bg-white text-black w-[100vw] h-[100vh] overflow-scroll'>
-			<RouterProvider router={router} />
-		</div>
+		<RouterProvider router={router} />
 	</React.StrictMode>,
 )
