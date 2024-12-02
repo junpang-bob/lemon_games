@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { ThemeContext, SetThemeContext } from '../../context/themeContext'
 
@@ -17,6 +17,8 @@ function HomeNav() {
 			localStorage.setItem('model', 'light')
 		}
 	}
+	const modelLink = theme === 'light' ? <use xlinkHref="#icon-icon-heiyemoshi"></use> : <use xlinkHref="#icon-icon-baitianmoshi"></use>
+
 	return <header className='flex flex-row justify-end pb-[40px] text-[20px]'>
 		<Link className='ml-5' to="/">home</Link>
 		<Link className='ml-5' to="/codeTest">codeTest</Link>
@@ -29,7 +31,7 @@ function HomeNav() {
 			</svg>
 		</a>
 		<svg onClick={() => handleChangeTheme()} className="icon ml-5 cursor-pointer" aria-hidden="true">
-			<use xlinkHref="#icon-icon-baitianmoshi"></use>
+			{modelLink}
 		</svg>
 	</header>
 }
@@ -53,10 +55,9 @@ export default function Home() {
 	}
 	return <ThemeContext.Provider value={theme}>
 		<SetThemeContext.Provider value={setTheme}>
-			<div className=' px-[28px] py-[40px] bg-white dark:bg-[#010101] text-black dark:text-white w-[100vw] h-[100vh] overflow-scroll' id='home'>
+			<div className=' px-[28px] py-[40px] bg-light-bg dark:bg-dark-bg text-light-text w-[100vw] h-[100vh] overflow-scroll' id='home'>
 				<HomeNav />
 				{view}
-			</div>
-		</SetThemeContext.Provider>
+			</div>7		</SetThemeContext.Provider>
 	</ThemeContext.Provider>
 }
