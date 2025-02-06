@@ -1,5 +1,6 @@
-import { Dispatch, SetStateAction, useContext, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import { apiCreateCat } from '../../api/homeApi'
 import { ThemeContext, SetThemeContext } from '../../context/themeContext'
 
 
@@ -53,6 +54,11 @@ export default function Home() {
 	if (theme === 'dark') {
 		rootEl?.classList.add(theme)
 	}
+	useEffect(() => {
+		apiCreateCat().then(res => {
+			console.log(res.data);
+		})
+	})
 	return <ThemeContext.Provider value={theme}>
 		<SetThemeContext.Provider value={setTheme}>
 			<div className=' px-[28px] py-[40px] bg-light-bg dark:bg-dark-bg text-light-text w-[100vw] h-[100vh] overflow-scroll' id='home'>

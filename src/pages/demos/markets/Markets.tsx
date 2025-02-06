@@ -1,47 +1,52 @@
-import { Button } from "antd"
-import { useCallback, useState } from "react"
-function TestFrom() {
-	let a = 1;
-	useCallback(() => {
-		console.log(a);
-	}, [a])
-	return <>
-		<div>测试案例</div>
-	</>
-}
-
-
-
-function List() {
-	const b = [1, 2, 3, 4]
-	const list = b.map(item => <li key={item}>{item}</li>)
-	return <>
-		{list}
-	</>
-}
-
-
-function AddTest() {
-	const [count, setCount] = useState(0)
-	function addClick() {
-		setCount((count) => count + 1)
-		setCount((count) => count + 1)
-		setCount((count) => count + 1)
-	}
-	return <>
-		<button onClick={addClick}>
-			+3
-		</button>
-		<span>{count}</span>
-	</>
-}
+import { Button, Table, TableColumnsType } from "antd"
 
 export default function Markets() {
 
+	interface DataType {
+		key: React.Key;
+		name: string;
+		age: number;
+		address: string;
+	}
+
+	const columns: TableColumnsType<DataType> = [
+		{
+			title: 'Name',
+			dataIndex: 'name',
+		},
+		{
+			title: 'Age',
+			dataIndex: 'age',
+		},
+		{
+			title: 'Address',
+			dataIndex: 'address',
+		},
+	];
+
+	const data: DataType[] = [
+		{
+			key: '1',
+			name: 'John Brown',
+			age: 32,
+			address: 'New York No. 1 Lake Park',
+		},
+		{
+			key: '2',
+			name: 'Jim Green',
+			age: 42,
+			address: 'London No. 1 Lake Park',
+		},
+		{
+			key: '3',
+			name: 'Joe Black',
+			age: 32,
+			address: 'Sydney No. 1 Lake Park',
+		},
+	];
+
 	return <div>
-		<TestFrom />
-		<List />
-		<AddTest />
+		<Table bordered columns={columns} dataSource={data}></Table>
 		<Button type="primary">
 			test
 		</Button>
