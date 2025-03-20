@@ -23,16 +23,16 @@ const router = createHashRouter([
         element: <Login />
     },
     {
-        path: 'home',
+        path: '/home',
         element: <Home />,
         children: [
             {
-                path: "game",
+                path: 'game',
                 element: <Game />,
                 children: [
                     {
-                        path: '',
-                        element: <Navigate to='/game/xogame'></Navigate>
+                        index: true,  // 使用 index 路由
+                        element: <Navigate to='xogame' relative="route" />
                     },
                     {
                         path: 'xogame',
@@ -49,8 +49,8 @@ const router = createHashRouter([
                 element: <Demos />,
                 children: [
                     {
-                        path: '',
-                        element: <Navigate to='/demos/markets'></Navigate>
+                        index: true,
+                        element: <Navigate to='markets' relative="route" />
                     },
                     {
                         path: 'markets',
@@ -59,11 +59,10 @@ const router = createHashRouter([
                 ]
             },
             {
-                path: "codeTest",
+                path: 'codeTest',
                 element: <CodeTest />
             }
         ]
-
     },
 ])
 
