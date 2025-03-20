@@ -1,4 +1,4 @@
-name: Deploy to Another Repo
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22'
+          node-version: '18'
           
       - name: Install dependencies
         run: npm install
@@ -28,7 +28,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'dist'
-          destination-github-username: ${{ secrets.TARGET_USERNAME }}
-          destination-repository-name: ${{ secrets.TARGET_REPO }}
+          destination-github-username: 'junpang-bob'
+          destination-repository-name: 'junpang-bob.github.io'
           user-email: ${{ secrets.USER_EMAIL }}
-          target-branch: master 
+          target-branch: master  # 注意这里是 master 而不是 main
