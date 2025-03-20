@@ -39,7 +39,7 @@ export default function Login() {
     function step(b: Branch, depth = 0) {
         const end = getEndPoint(b)
         drawBranch(b)
-        if ((depth < 2 || Math.random() < 0.5) && depth < 15) {
+        if ((depth < 3 || Math.random() < 0.5) && depth < 15) {
             pendingTasks.push(() => {
                 step({
                     start: end,
@@ -48,7 +48,7 @@ export default function Login() {
                 }, depth + 1)
             })
         }
-        if ((depth < 2 || Math.random() < 0.5) && depth < 15) {
+        if ((depth < 3 || Math.random() < 0.5) && depth < 15) {
             pendingTasks.push(() => {
                 step({
                     start: end,
@@ -67,7 +67,7 @@ export default function Login() {
     function startFrame() {
         frameCount += 1
         requestAnimationFrame(() => {
-            if (frameCount % 5 === 0) {
+            if (frameCount % 10 === 0) {
                 frame()
             }
             startFrame()
@@ -104,9 +104,9 @@ export default function Login() {
             <canvas id="canvas" className="absolute top-0 left-0 w-full h-full" ref={canvasRef} width={window.innerWidth} height={window.innerHeight} />
             <div className="flex flex-col items-center justify-center h-screen">
                 <h1 className="text-2xl text-white mb-[20px]">只有风暴才能击倒大树</h1>
-                <Input value={username} onChange={(e: any) => setUsername(e.target.value)} type="text" placeholder="用户名" className="w-[300px] h-[40px] mb-[20px]" />
-                <Input value={password} onChange={(e: any) => setPassword(e.target.value)} type="password" placeholder="密码" className="w-[300px] h-[40px] mb-[20px]" />
-                <Button className="w-[300px] h-[40px] bg-blue-500 text-white">登录</Button>
+                <Input value={username} onChange={(e: any) => setUsername(e.target.value)} type="text" placeholder="门牌号" className="w-[300px] h-[40px] mb-[20px]" />
+                <Input value={password} onChange={(e: any) => setPassword(e.target.value)} type="password" placeholder="钥匙" className="w-[300px] h-[40px] mb-[20px]" />
+                <Button className="w-[300px] h-[40px]" type="primary">连接</Button>
             </div>
         </div>
     )

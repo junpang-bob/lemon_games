@@ -16,6 +16,58 @@ import Demos from './pages/demos/Demos';
 import Markets from './pages/demos/markets/Markets';
 import CodeTest from './pages/reactLearn/CodeTest';
 import Login from './pages/login/Login';
+import { ConfigProvider } from 'antd'
+
+const darkTheme = {
+    token: {
+        // 主题色
+        colorPrimary: '#00b894',
+        colorInfo: '#00b894',
+        colorSuccess: '#00b894',
+        colorWarning: '#f1c40f',
+        colorError: '#e74c3c',
+
+        // 背景色
+        colorBgContainer: '#1e1e1e',
+        colorBgElevated: '#2d2d2d',
+        colorBgLayout: '#141414',
+
+        // 文字颜色
+        colorText: '#ffffff',
+        colorTextSecondary: 'rgba(255, 255, 255, 0.85)',
+        colorTextTertiary: 'rgba(255, 255, 255, 0.65)',
+
+        // 边框
+        colorBorder: '#333333',
+        colorBorderSecondary: '#1f1f1f',
+
+        // 其他
+        borderRadius: 4,
+        controlHeight: 32,
+
+        // 禁用状态
+        colorTextDisabled: 'rgba(255, 255, 255, 0.25)',
+        colorBgContainerDisabled: 'rgba(255, 255, 255, 0.04)',
+    },
+    components: {
+        Button: {
+            colorPrimaryHover: '#00d6a9',
+            algorithm: true, // 启用算法
+        },
+        Input: {
+            colorBgContainer: '#2d2d2d',
+            colorBorder: '#333333',
+        },
+        Select: {
+            colorBgContainer: '#2d2d2d',
+            colorBorder: '#333333',
+        },
+        Menu: {
+            colorItemBg: 'transparent',
+            colorItemBgHover: 'rgba(255, 255, 255, 0.04)',
+        }
+    }
+};
 
 const router = createHashRouter([
     {
@@ -68,6 +120,8 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <ConfigProvider theme={darkTheme}>
+            <RouterProvider router={router} />
+        </ConfigProvider>
     </React.StrictMode>,
 )
