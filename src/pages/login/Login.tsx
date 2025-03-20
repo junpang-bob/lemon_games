@@ -4,6 +4,8 @@ interface Point {
     x: number
     y: number
 }
+console.log(111);
+
 interface Branch {
     start: Point
     length: number
