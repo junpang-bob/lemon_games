@@ -31,4 +31,4 @@ jobs:
           destination-github-username: ${{ secrets.TARGET_USERNAME }}
           destination-repository-name: ${{ secrets.TARGET_REPO }}
           user-email: ${{ secrets.USER_EMAIL }}
-          target-branch: main 
+          target-branch: master 
