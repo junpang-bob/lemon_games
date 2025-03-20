@@ -28,7 +28,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'dist'
-          destination-github-username: 'junpang-bob'
-          destination-repository-name: 'junpang-bob.github.io'
+          destination-github-username: ${{ secrets.TARGET_USERNAME }}
+          destination-repository-name: ${{ secrets.TARGET_REPO }}
           user-email: ${{ secrets.USER_EMAIL }}
           target-branch: master  # 注意这里是 master 而不是 main
