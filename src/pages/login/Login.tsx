@@ -1,10 +1,11 @@
 import { useRef, useEffect, useState } from "react"
 import { Input, Button } from 'antd'
+import { ReactTyped } from "react-typed";
+
 interface Point {
     x: number
     y: number
 }
-console.log(111);
 
 interface Branch {
     start: Point
@@ -105,7 +106,9 @@ export default function Login() {
         <div className="bg-black w-screen h-screen">
             <canvas id="canvas" className="absolute top-0 left-0 w-full h-full" ref={canvasRef} width={window.innerWidth} height={window.innerHeight} />
             <div className="flex flex-col items-center justify-center h-screen">
-                <h1 className="text-2xl text-white mb-[20px]">只有风暴才能击倒大树</h1>
+                <h1 className="text-2xl text-white mb-[20px]">
+                    <ReactTyped strings={["只有风暴才能击倒大树"]} typeSpeed={100} />
+                </h1>
                 <Input value={username} onChange={(e: any) => setUsername(e.target.value)} type="text" placeholder="门牌号" className="w-[300px] h-[40px] mb-[20px]" />
                 <Input value={password} onChange={(e: any) => setPassword(e.target.value)} type="password" placeholder="钥匙" className="w-[300px] h-[40px] mb-[20px]" />
                 <Button className="w-[300px] h-[40px]" type="primary">连接</Button>
