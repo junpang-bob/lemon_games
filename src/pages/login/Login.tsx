@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from "react"
-import { Input, Button } from 'antd'
+import { useRef, useEffect } from "react"
+import { Button } from 'antd'
 import { ReactTyped } from "react-typed";
 
 interface Point {
@@ -13,8 +13,6 @@ interface Branch {
     angle: number
 }
 export default function Login() {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const ctxRef = useRef<CanvasRenderingContext2D | null>(null)
     function lineTo(p1: Point, p2: Point,) {
@@ -106,11 +104,24 @@ export default function Login() {
         <div className="bg-black w-screen h-screen">
             <canvas id="canvas" className="absolute top-0 left-0 w-full h-full" ref={canvasRef} width={window.innerWidth} height={window.innerHeight} />
             <div className="flex flex-col items-center justify-center h-screen">
-                <h1 className="text-2xl text-white mb-[20px]">
-                    <ReactTyped strings={["只有风暴才能击倒大树"]} typeSpeed={100} />
-                </h1>
-                <Input value={username} onChange={(e: any) => setUsername(e.target.value)} type="text" placeholder="门牌号" className="w-[300px] h-[40px] mb-[20px]" />
-                <Input value={password} onChange={(e: any) => setPassword(e.target.value)} type="password" placeholder="钥匙" className="w-[300px] h-[40px] mb-[20px]" />
+                <div className="text-2xl text-white mb-[20px] text-center">
+                    <ReactTyped
+                        strings={[
+                            `只有风暴才能击倒大树\n
+                            分享一些好玩的效果，写一些敲代码的感悟\n
+                            分享一些玩游戏的感悟`
+                        ]}
+                        typeSpeed={50}
+                        backSpeed={50}
+                        loop={false}
+                        backDelay={1000}
+                        fadeOut={false}
+                        fadeOutDelay={100}
+                        style={{
+                            whiteSpace: 'pre-line',
+                        }}
+                    />
+                </div>
                 <Button className="w-[300px] h-[40px]" type="primary">连接</Button>
             </div>
         </div>
