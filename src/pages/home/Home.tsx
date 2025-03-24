@@ -4,14 +4,12 @@ import { ThemeContext, SetThemeContext } from '../../context/themeContext'
 
 
 function HomeNav() {
-
-
     return <header className='flex flex-row justify-end pb-[40px] text-[20px]'>
         <Link className='ml-5' to="/home">home</Link>
         <Link className='ml-5 ' to="/home/codeTest">codeTest</Link>
-        <Link className='ml-5' to="/home/game">blog</Link>
+        <Link className='ml-5' to="/home/codeTest">blog</Link>
         <Link className='ml-5 hidden' to="/home/game">game</Link>
-        <Link className='ml-5 hidden' to="/home/demos">demo</Link>
+        <Link className='ml-5' to="/home/codeTest">demo</Link>
         <a href="https://github.com/junpang-bob" target="_blank" className='ml-5'>
             <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-github"></use>
