@@ -1,24 +1,10 @@
-import { Dispatch, SetStateAction, useContext, useState } from 'react'
+import { useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { ThemeContext, SetThemeContext } from '../../context/themeContext'
 
 
 function HomeNav() {
-    const theme = useContext(ThemeContext)
-    const setTheme: Dispatch<SetStateAction<string>> = useContext(SetThemeContext)
-    const handleChangeTheme = () => {
-        return;
-        theme === 'light' ? setTheme('dark') : setTheme('light')
-        const rootEl = document.querySelector('#root')
-        if (theme === 'light') {
-            rootEl?.classList.add('dark')
-            localStorage.setItem('model', 'dark')
-        } else {
-            rootEl?.classList.remove('dark')
-            localStorage.setItem('model', 'light')
-        }
-    }
-    const modelLink = theme === 'light' ? <use xlinkHref="#icon-icon-heiyemoshi"></use> : <use xlinkHref="#icon-icon-baitianmoshi"></use>
+
 
     return <header className='flex flex-row justify-end pb-[40px] text-[20px]'>
         <Link className='ml-5' to="/home">home</Link>
