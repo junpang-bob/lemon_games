@@ -1,21 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
-	.blog-p {
-	  margin-bottom: 15px;
-	  width: 100%;
-	  font-size: 14px;
-	  color: gray;
-	  text-indent: 2em;
-	  line-height: 1.2em;
-	}
-	/* ... */
-  }
-  .icon {
-	width: 1em;
-	height: 1em;
-	vertical-align: -0.15em;
-	fill: currentColor;
-	overflow: hidden;
-  }
+    .blog-p {
+        margin-bottom: 15px;
+        width: 100%;
+        font-size: 18px;
+        color: rgb(187, 187, 187);
+        text-indent: 2em;
+        line-height: 1em;
+    }
+
+    /* ... */
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}

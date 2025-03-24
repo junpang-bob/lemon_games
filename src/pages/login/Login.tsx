@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react"
 import { Button } from 'antd'
 import { ReactTyped } from "react-typed";
-
+import { Link } from "react-router-dom";
 interface Point {
     x: number
     y: number
@@ -123,7 +123,7 @@ export default function Login() {
                         }}
                     />
                 </div>
-                <Button className="w-[300px] h-[40px]" type="primary">连接</Button>
+                <Link to="/home"> <Button className="w-[120px] h-[40px]" type="primary">连接</Button></Link>
             </div>
         </div>
     )
