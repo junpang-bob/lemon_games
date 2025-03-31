@@ -16,6 +16,7 @@ function PixiComponent() {
         antialias: true,
         autoDensity: true,
       });
+      console.log(1111);
 
       if (canvasRef.current) {
         const container = new Container({
