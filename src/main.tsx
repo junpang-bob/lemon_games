@@ -104,7 +104,7 @@ const router = createHashRouter([
                 children: [
                     {
                         index: true,
-                        element: <Navigate to='markets' relative="route" />
+                        element: <Navigate to='pixiTag' relative="route" />
                     },
                     {
                         path: 'markets',
