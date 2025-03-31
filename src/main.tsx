@@ -18,7 +18,7 @@ import CodeTest from './pages/reactLearn/CodeTest';
 import Login from './pages/login/Login';
 import { ConfigProvider } from 'antd'
 import Blog from './pages/blog/Blog';
-
+import PixiTag from './pages/demos/pixiTag/pixiTag';
 
 const darkTheme = {
     token: {
@@ -109,6 +109,10 @@ const router = createHashRouter([
                     {
                         path: 'markets',
                         element: <Markets />,
+                    },
+                    {
+                        path: 'pixiTag',
+                        element: <PixiTag />
                     }
                 ]
             },
