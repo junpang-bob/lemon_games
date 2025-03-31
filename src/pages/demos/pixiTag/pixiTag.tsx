@@ -6,6 +6,7 @@ function PixiComponent() {
   const appRef = useRef<Application | null>(null);
 
   useEffect(() => {
+    let amount = true;
     const initPixi = async () => {
       const app = new Application();
       appRef.current = app;
@@ -16,9 +17,9 @@ function PixiComponent() {
         antialias: true,
         autoDensity: true,
       });
-      console.log(1111);
+      console.log(app);
 
-      if (canvasRef.current) {
+      if (canvasRef.current && amount) {
         const container = new Container({
           width: 120,
           height: 40,
@@ -51,16 +52,14 @@ function PixiComponent() {
         });
         canvasRef.current.appendChild(app.canvas as HTMLCanvasElement);
       }
-      console.log(app);
     };
 
     initPixi();
 
-    // return () => {
-    //   if (appRef.current) {
-    //     appRef.current.destroy(true);
-    //   }
-    // };
+    return () => {
+      // console.log(appRef.current?.destroy);
+      amount = false;
+    };
   }, []);
 
   return <div ref={canvasRef} className="border-2 border-gray-300 rounded-lg shadow-lg" />;
