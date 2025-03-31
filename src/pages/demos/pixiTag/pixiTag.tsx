@@ -1,24 +1,40 @@
 import { useEffect, useRef } from 'react';
-import { Application } from 'pixi.js';
+import { Application, Container } from 'pixi.js';
 
 function PixiComponent() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<Application | null>(null);
 
   useEffect(() => {
-    const app = new Application();
-    appRef.current = app;
-    app.init({
-      background: '#1099bb',
-      width: 400,
-      height: 200,
-      antialias: true,
-      autoDensity: true,
-    }).then(() => {
+    const initPixi = async () => {
+      const app = new Application();
+      appRef.current = app;
+      await app.init({
+        background: '#1099bb',
+        width: 400,
+        height: 200,
+        antialias: true,
+        autoDensity: true,
+      });
+
       if (canvasRef.current) {
+        const container = new Container({
+          width: 120,
+          height: 40,
+        });
+        app.stage.addChild(container);
         canvasRef.current.appendChild(app.canvas as HTMLCanvasElement);
       }
-    });
+      console.log(app);
+    };
+
+    initPixi();
+
+    return () => {
+      if (appRef.current) {
+        appRef.current.destroy(true);
+      }
+    };
   }, []);
 
   return <div ref={canvasRef} className="border-2 border-gray-300 rounded-lg shadow-lg" />;
