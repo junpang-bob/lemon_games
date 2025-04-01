@@ -1,4 +1,20 @@
 
+
+function BlogItem() {
+    const blogList = [
+        {
+            year: 2025,
+            title: 'blog1',
+            route: 'blog1'
+        }
+    ];
+    console.log(blogList);
+
+    return <div>
+        <h1>blog1</h1>
+    </div>
+}
+
 export default function Blog() {
 
     const yearList = [
@@ -12,8 +28,10 @@ export default function Blog() {
     ]
 
 
+
     const BgYear = () => {
         return <div>
+            <BlogItem></BlogItem>
             {yearList.map((year) => {
                 return (
                     <div key={year} className="mt-[30px] relative min-h-[200px]">
