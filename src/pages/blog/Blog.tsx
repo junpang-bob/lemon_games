@@ -1,45 +1,47 @@
 
 
-function BlogItem() {
-    const blogList = [
-        {
-            year: 2025,
-            title: 'blog1',
-            route: 'blog1'
-        }
-    ];
-    console.log(blogList);
-
-    return <div>
-        <h1>blog1</h1>
+interface BlogItem {
+    title: string;
+    writeTime: string;
+    content: string;
+}
+function BlogItem(blog: BlogItem) {
+    return <div className="flex mb-[20px] text-[#ccc] hover:text-blue-500 ">
+        <h1>{blog.title}</h1>
+        <p className="ml-[20px]">{blog.writeTime}</p>
     </div>
 }
 
 export default function Blog() {
+    const blogList = [
+        {
+            year: 2025,
+            blogs: [
+                {
+                    title: '这是第一篇博客',
+                    writeTime: '2025-04-10',
+                    content: '这是第一篇博客的内容'
+                },
+                {
+                    title: '这是第二篇博客',
+                    writeTime: '2025-04-10',
+                    content: '这是第二篇博客的内容'
+                }
+            ]
+        },
 
-    const yearList = [
-        2025,
-        2024,
-        2023,
-        2022,
-        2021,
-        2020,
-        2019,
-    ]
-
-
-
+    ];
     const BgYear = () => {
         return <div>
-            <BlogItem></BlogItem>
-            {yearList.map((year) => {
+            {blogList.map((blog) => {
                 return (
-                    <div key={year} className="mt-[30px] relative min-h-[200px]">
+                    <div key={blog.year} className="mt-[30px] relative min-h-[200px]">
                         <div className="absolute text-[128px] tracking-[10px] font-bold text-transparent [-webkit-text-stroke:1px_rgba(170,170,170,0.3)]"
-                        >{year}</div>
-                        <div className="pt-[70px]">blog1</div>
-                        <div>blog1</div>
-                        <div>blog1</div>
+                        >{blog.year}</div>
+                        <div className="pt-[80px]"></div>
+                        {blog.blogs.map((blog) => {
+                            return <BlogItem {...blog} key={blog.title} />
+                        })}
                     </div>
                 )
             })}
