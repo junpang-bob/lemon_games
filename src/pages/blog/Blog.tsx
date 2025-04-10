@@ -6,7 +6,7 @@ interface BlogItem {
     content: string;
 }
 function BlogItem(blog: BlogItem) {
-    return <div className="flex mb-[20px] text-[#ccc] hover:text-blue-500 ">
+    return <div className="relative z-20 flex mb-[20px] text-[18px] text-[rgba(255,255,255,0.5)] hover:text-white cursor-pointer ">
         <h1>{blog.title}</h1>
         <p className="ml-[20px]">{blog.writeTime}</p>
     </div>
@@ -35,12 +35,12 @@ export default function Blog() {
         return <div>
             {blogList.map((blog) => {
                 return (
-                    <div key={blog.year} className="mt-[30px] relative min-h-[200px]">
-                        <div className="absolute text-[128px] tracking-[10px] font-bold text-transparent [-webkit-text-stroke:1px_rgba(170,170,170,0.3)]"
+                    <div key={blog.year} className="mt-[30px] relative z-10 min-h-[200px]">
+                        <div className="absolute -z-1 text-[128px] tracking-[10px] font-bold text-transparent [-webkit-text-stroke:1px_rgba(170,170,170,0.2)]"
                         >{blog.year}</div>
                         <div className="pt-[80px]"></div>
                         {blog.blogs.map((blog) => {
-                            return <BlogItem {...blog} key={blog.title} />
+                            return <BlogItem key={blog.title} {...blog} />
                         })}
                     </div>
                 )
