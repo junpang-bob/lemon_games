@@ -3,7 +3,7 @@
 interface BlogItem {
     title: string;
     writeTime: string;
-    content: string;
+    route: string;
 }
 function BlogItem(blog: BlogItem) {
     return <div className="relative z-20 flex mb-[20px] text-[18px] text-[rgba(255,255,255,0.5)] hover:text-white cursor-pointer ">
@@ -18,14 +18,14 @@ export default function Blog() {
             year: 2025,
             blogs: [
                 {
-                    title: '这是第一篇博客',
+                    title: '如何优化pixi大规模渲染动态sprite',
                     writeTime: '2025-04-10',
-                    content: '这是第一篇博客的内容'
+                    route: '1'
                 },
                 {
-                    title: '这是第二篇博客',
-                    writeTime: '2025-04-10',
-                    content: '这是第二篇博客的内容'
+                    title: '如何使用rust编写webassembly做高性能计算',
+                    writeTime: '2025-03-10',
+                    route: '2'
                 }
             ]
         },
@@ -40,7 +40,7 @@ export default function Blog() {
                         >{blog.year}</div>
                         <div className="pt-[80px]"></div>
                         {blog.blogs.map((blog) => {
-                            return <BlogItem key={blog.title} {...blog} />
+                            return <BlogItem key={blog.route} {...blog} />
                         })}
                     </div>
                 )
