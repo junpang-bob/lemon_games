@@ -6,9 +6,9 @@ interface BlogItem {
     route: string;
 }
 function BlogItem(blog: BlogItem) {
-    return <div className="relative z-20 flex mb-[20px] text-[18px] text-[rgba(255,255,255,0.5)] hover:text-white cursor-pointer ">
+    return <div className="relative z-20 flex items-baseline mb-[20px] text-[18px] text-[rgba(255,255,255,0.5)] hover:text-white cursor-pointer ">
         <h1>{blog.title}</h1>
-        <p className="ml-[20px]">{blog.writeTime}</p>
+        <p className="ml-[40px] text-[14px]">{blog.writeTime}</p>
     </div>
 }
 
