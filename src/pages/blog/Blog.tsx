@@ -1,3 +1,4 @@
+import { useParams, Outlet, useNavigate } from "react-router-dom";
 
 
 interface BlogItem {
@@ -6,13 +7,18 @@ interface BlogItem {
     route: string;
 }
 function BlogItem(blog: BlogItem) {
-    return <div className="relative z-20 flex items-baseline mb-[20px] text-[18px] text-[rgba(255,255,255,0.5)] hover:text-white cursor-pointer ">
+    const navigate = useNavigate()
+    return <div className="relative z-20 flex items-baseline mb-[20px] text-[18px] text-[rgba(255,255,255,0.5)] hover:text-white cursor-pointer "
+        onClick={() => {
+            navigate(`/home/blog/${blog.route}`)
+        }}>
         <h1>{blog.title}</h1>
         <p className="ml-[40px] text-[14px]">{blog.writeTime}</p>
     </div>
 }
 
 export default function Blog() {
+    const { id } = useParams();
     const blogList = [
         {
             year: 2025,
@@ -47,9 +53,10 @@ export default function Blog() {
             })}
         </div>
     }
+    const Content = id ? <Outlet /> : <BgYear />
     return <div className="w-[75ch] mx-auto">
         <h1 className="text-[30px] font-bold">Blog</h1>
-        <BgYear />
+        {Content}
     </div>
 }
 

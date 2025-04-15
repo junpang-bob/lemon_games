@@ -19,7 +19,7 @@ import Login from './pages/login/Login';
 import { ConfigProvider } from 'antd'
 import Blog from './pages/blog/Blog';
 import PixiTag from './pages/demos/pixiTag/pixiTag';
-
+import BlogArticle from './pages/blog/BlogArticle';
 const darkTheme = {
     token: {
         // 主题色
@@ -118,7 +118,13 @@ const router = createHashRouter([
             },
             {
                 path: 'blog',
-                element: <Blog />
+                element: <Blog />,
+                children: [
+                    {
+                        path: ':id',
+                        element: <BlogArticle />
+                    }
+                ]
             },
             {
                 path: 'codeTest',
