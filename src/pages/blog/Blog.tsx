@@ -13,7 +13,7 @@ function BlogItem(blog: BlogItem) {
             navigate(`/home/blog/${blog.route}`)
         }}>
         <h1>{blog.title}</h1>
-        <p className="ml-[40px] text-[14px]">{blog.writeTime}</p>
+        <p className="ml-[40px] text-[16px]">{blog.writeTime}</p>
     </div>
 }
 
