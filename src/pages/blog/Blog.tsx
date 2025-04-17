@@ -26,13 +26,13 @@ export default function Blog() {
                 {
                     title: '如何优化pixi大规模渲染动态sprite',
                     writeTime: '2025-04-10',
-                    route: '1'
+                    route: 'pixiImprove'
                 },
-                {
-                    title: '如何使用rust编写webassembly做高性能计算',
-                    writeTime: '2025-03-10',
-                    route: '2'
-                }
+                // {
+                //     title: '如何使用rust编写webassembly做高性能计算',
+                //     writeTime: '2025-03-10',
+                //     route: 'test'
+                // }
             ]
         },
 
