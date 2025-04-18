@@ -28,7 +28,7 @@ function PixiComponent() {
         const texture = await Assets.load('https://pixijs.com/assets/bunny.png');
 
         // Create a 5x5 grid of bunnies in the container
-        for (let i = 0; i < 25; i++) {
+        for (let i = 0; i < 10000; i++) {
           const bunny = new Sprite(texture);
 
           bunny.x = (i % 5) * 40;
