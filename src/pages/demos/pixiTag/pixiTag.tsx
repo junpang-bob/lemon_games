@@ -13,42 +13,27 @@ function PixiComponent() {
       await app.init({
         background: '#1099bb',
         width: 400,
-        height: 200,
+        height: 400,
         antialias: true,
         autoDensity: true,
       });
       console.log(app);
 
       if (canvasRef.current && amount) {
-        const container = new Container({
-          width: 120,
-          height: 40,
-        });
+        const container = new Container();
         app.stage.addChild(container);
         const texture = await Assets.load('https://pixijs.com/assets/bunny.png');
-
+        const snack = new Sprite(texture);
+        snack.width = 20;
+        snack.height = 20;
+        container.addChild(snack);
         // Create a 5x5 grid of bunnies in the container
-        for (let i = 0; i < 10000; i++) {
-          const bunny = new Sprite(texture);
-
-          bunny.x = (i % 5) * 40;
-          bunny.y = Math.floor(i / 5) * 40;
-          container.addChild(bunny);
-        }
-
-        // Move the container to the center
-        container.x = app.screen.width / 2;
-        container.y = app.screen.height / 2;
-
-        // Center the bunny sprites in local container coordinates
-        container.pivot.x = container.width / 2;
-        container.pivot.y = container.height / 2;
 
         // Listen for animate update
         app.ticker.add((time) => {
+          container.x += 1;
           // Continuously rotate the container!
           // * use delta to create frame-independent transform *
-          container.rotation -= 0.01 * time.deltaTime;
         });
         canvasRef.current.appendChild(app.canvas as HTMLCanvasElement);
       }
