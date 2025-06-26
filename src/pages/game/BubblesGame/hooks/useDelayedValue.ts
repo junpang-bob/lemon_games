@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState } from 'react'
+const test = "test";
 function useDelayedValue<T>(value: T, delay: number) {
-  const [delayedValue, setDelayedValue] = useState(value);
-
+  const [delayedValue, setDelayedValue] = useState(value)
   useEffect(() => {
     setTimeout(() => {
-      setDelayedValue(value);
-    }, delay);
-  }, [value, delay]);
+      setDelayedValue(value)
+    }, delay)
+  }, [value, delay])
 
-  return delayedValue;
+  return delayedValue
 }
 export { useDelayedValue }

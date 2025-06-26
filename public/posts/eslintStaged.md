@@ -178,4 +178,4 @@ module.exports = {
 
 3. **Git Hooks问题**：
    - 确保husky正确安装
-   - 检查pre-commit hook配置 
+   - 检查pre-commit hook配置

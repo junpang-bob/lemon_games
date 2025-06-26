@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import styles from './XOGame.module.scss'
 
 function Square({ value, onSquareClick }: { value: string | null, onSquareClick: () => void }) {
-
-  return (<>
-    <button onClick={onSquareClick} className={styles.xoSquare}>{value}</button>
-  </>)
+  return (
+    <>
+      <button onClick={onSquareClick} className={styles.xoSquare}>{value}</button>
+    </>
+  )
 }
 function calculateWinner(squares: string[]) {
   const lines = [
@@ -16,34 +17,37 @@ function calculateWinner(squares: string[]) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6]
-  ];
+    [2, 4, 6],
+  ]
   for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+    const [a, b, c] = lines[i]
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return squares[a]
     }
   }
-  return null;
+  return null
 }
 
 function Board({ xIsNext, squares, onPlay }: { xIsNext: boolean | null, squares: string[], onPlay: (squares: string[]) => void }) {
-  const winner = calculateWinner(squares);
-  let status;
+  const winner = calculateWinner(squares)
+  let status
   if (winner) {
-    status = "Winner: " + winner;
-  } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = `Winner: ${winner}`
+  }
+  else {
+    status = `Next player: ${xIsNext ? 'X' : 'O'}`
   }
   function handleClick(i: number) {
-    if (squares[i] || calculateWinner(squares)) return;
-    const nextSquares = squares.slice();
+    if (squares[i] || calculateWinner(squares))
+      return
+    const nextSquares = squares.slice()
     if (xIsNext) {
-      nextSquares[i] = "X";
-    } else {
-      nextSquares[i] = "O";
+      nextSquares[i] = 'X'
     }
-    onPlay(nextSquares);
+    else {
+      nextSquares[i] = 'O'
+    }
+    onPlay(nextSquares)
     // setXIsNext(!xIsNext);
     // setSquares(nextSquares);
   }
@@ -70,39 +74,40 @@ function Board({ xIsNext, squares, onPlay }: { xIsNext: boolean | null, squares:
 }
 
 export default function XOGame() {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
-  const [currentMove, setCurrentMove] = useState(0);
-  const currentSquares = history[currentMove];
-  const xIsNext = currentMove % 2 === 0;
+  const [history, setHistory] = useState([Array(9).fill(null)])
+  const [currentMove, setCurrentMove] = useState(0)
+  const currentSquares = history[currentMove]
+  const xIsNext = currentMove % 2 === 0
   function handlePlay(nextSquares: string[]) {
     // TODO
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-    setHistory(nextHistory);
-    setCurrentMove(nextHistory.length - 1);
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
+    setHistory(nextHistory)
+    setCurrentMove(nextHistory.length - 1)
   }
   function jumpTo(nextMove: number) {
     // TODO
-    setCurrentMove(nextMove);
+    setCurrentMove(nextMove)
   }
   const moves = history.map((squares, move) => {
-    let description;
-    console.log(squares);
+    let description
+    console.log(squares)
 
     if (move > 0) {
-      description = 'Go to move #' + move;
-    } else {
-      description = 'Go to game start';
+      description = `Go to move #${move}`
+    }
+    else {
+      description = 'Go to game start'
     }
     return (
       <li key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
-    );
-  });
+    )
+  })
   return (
-    <div className='lemon_vertical_center'>
+    <div className="lemon_vertical_center">
       <div><Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} /></div>
-      <div className='list'>
+      <div className="list">
         <ol>
           {moves}
         </ol>

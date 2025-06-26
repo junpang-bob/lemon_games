@@ -221,4 +221,4 @@ export default {
 3. **TypeScript问题**：
    - 更新TypeScript配置
    - 检查类型定义
-   - 验证解析器设置 
+   - 验证解析器设置

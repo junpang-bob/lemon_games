@@ -145,7 +145,7 @@ export const useUserStore = defineStore('user', {
     userInfo: null,
   }),
   getters: {
-    isLoggedIn: (state) => !!state.userInfo,
+    isLoggedIn: state => !!state.userInfo,
   },
   actions: {
     async login(credentials) {
@@ -263,4 +263,4 @@ describe('ComponentName', () => {
 3. **定期同步**：
    - 技术分享会
    - 代码规范更新
-   - 最佳实践讨论 
+   - 最佳实践讨论

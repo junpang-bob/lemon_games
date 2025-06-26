@@ -1,10 +1,11 @@
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link, Outlet } from 'react-router-dom'
 
 export default function Demos() {
-	return <div>
-		<Link to="/demos/markets">markets</Link>
-		<Outlet />
-		{/* {test} */}
-	</div>
+  return (
+    <div>
+      <Link to="/home/demos/markets">markets</Link>
+      <Outlet />
+      {/* {test} */}
+    </div>
+  )
 }

@@ -1,6 +1,6 @@
 // import { useState } from "react"
 
-import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEditor, SandpackPreview } from "@codesandbox/sandpack-react";
+import { SandpackCodeEditor, SandpackFileExplorer, SandpackLayout, SandpackPreview, SandpackProvider } from '@codesandbox/sandpack-react'
 // interface Person {
 // 	name: string
 // 	age: number
@@ -12,24 +12,23 @@ import { SandpackProvider, SandpackLayout, SandpackFileExplorer, SandpackCodeEdi
 // 	</>
 // }
 export default function CodeTest() {
-	// const [isChoosed, setIsChoosed] = useState(true)
-	// if (isChoosed) return <PersonCard name="PPGod" age={18} />
-	// else return <PersonCard name="369" age={3333} />
+  // const [isChoosed, setIsChoosed] = useState(true)
+  // if (isChoosed) return <PersonCard name="PPGod" age={18} />
+  // else return <PersonCard name="369" age={3333} />
 
+  const files = {}
 
-	const files = {}
-
-	return (
-		<SandpackProvider
-			files={files}
-			theme="light"
-			template="react"
-		>
-			<SandpackLayout>
-				<SandpackFileExplorer />
-				<SandpackCodeEditor closableTabs showTabs />
-				<SandpackPreview />
-			</SandpackLayout>
-		</SandpackProvider>
-	)
+  return (
+    <SandpackProvider
+      files={files}
+      theme="light"
+      template="react"
+    >
+      <SandpackLayout>
+        <SandpackFileExplorer />
+        <SandpackCodeEditor closableTabs showTabs />
+        <SandpackPreview />
+      </SandpackLayout>
+    </SandpackProvider>
+  )
 }

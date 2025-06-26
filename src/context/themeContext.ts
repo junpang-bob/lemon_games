@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
-export const ThemeContext: any = createContext('dark');
-export const SetThemeContext: any = createContext(null);
+export const ThemeContext: any = createContext('dark')
+export const SetThemeContext: any = createContext(null)
