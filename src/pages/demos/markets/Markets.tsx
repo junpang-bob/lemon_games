@@ -1,4 +1,4 @@
-import type { TableColumnsType } from 'antd'
+
 import { Button, Table,Pagination } from 'antd'
 import type { MouseEvent } from 'react'
 const {Column} =Table
@@ -31,24 +31,24 @@ export default function Markets() {
     },
   ]
 
-  const columns: TableColumnsType<DataType> = [
-    {
-      title: '序号',
-      dataIndex: 'index',
-    },
-    {
-      title: '姓名',
-      dataIndex: 'name',
-    },
-    {
-      title: '年龄',
-      dataIndex: 'age',
-    },
-    {
-      title: '地址',
-      dataIndex: 'address',
-    },
-  ]
+  // const columns: TableColumnsType<DataType> = [
+  //   {
+  //     title: '序号',
+  //     dataIndex: 'index',
+  //   },
+  //   {
+  //     title: '姓名',
+  //     dataIndex: 'name',
+  //   },
+  //   {
+  //     title: '年龄',
+  //     dataIndex: 'age',
+  //   },
+  //   {
+  //     title: '地址',
+  //     dataIndex: 'address',
+  //   },
+  // ]
 
   function handleCellClick(cell:DataType,event:MouseEvent) {
     event.stopPropagation()
